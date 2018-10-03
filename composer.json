@@ -1,0 +1,37 @@
+{
+    "name": "arpadhegedus/utility",
+    "description": "Utility classes for everyday php development",
+    "type": "library",
+    "license": "MIT",
+    "version": "0.0.1",
+    "authors": [
+        {
+            "name": "Arpad.Hegedus",
+            "email": "hegedus.arpad@gmail.com"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "src/"
+        ],
+        "psr-0": {
+            "Utility_": "src"
+        },
+        "psr-4": {
+            "Utility\\": "src"
+        }
+    },
+    "scripts": {
+        "test": "phpunit test",
+        "doc": [
+            "phpdoc --directory src --target doc --title Utility --template ./vendor/cvuorinen/phpdoc-markdown-public/data/templates/markdown-public",
+            "cp './doc/README.md' './README.md'",
+            "rm -r './doc'"
+        ]
+    },
+    "require-dev": {
+        "cvuorinen/phpdoc-markdown-public": "0.2.0",
+        "phpdocumentor/phpdocumentor": "2.9",
+        "phpunit/phpunit": "^7.3"
+    }
+}
