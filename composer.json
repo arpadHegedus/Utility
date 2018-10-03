@@ -26,7 +26,8 @@
         "doc": [
             "phpdoc --directory src --target doc --title Utility --template ./vendor/cvuorinen/phpdoc-markdown-public/data/templates/markdown-public",
             "cp './doc/README.md' './README.md'",
-            "rm -r './doc'"
+            "rm -r './doc'",
+            "php -r \"$f='./README.md';$c=file_get_contents($f);$c=str_replace('&#039;','\\'',$c);file_put_contents($f,$c);\""
         ]
     },
     "require-dev": {

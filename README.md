@@ -240,7 +240,7 @@
 Get a value of a $collection by a $key of $separator notation with $default fallback
 
 ```php
-Arr::get( array|object $collection, string $key = &#039;&#039;, mixed $default = null, string $separator = &#039;.&#039; ): mixed
+Arr::get( array|object $collection, string $key = '', mixed $default = null, string $separator = '.' ): mixed
 ```
 
 
@@ -310,7 +310,7 @@ Arr::keys( array|object $collection ): array
 Remove a $key value in a $collection using $separator notation.
 
 ```php
-Arr::remove( array|object $collection, string|array $key, string $separator = &#039;.&#039; ): array|object
+Arr::remove( array|object $collection, string|array $key, string $separator = '.' ): array|object
 ```
 
 
@@ -334,7 +334,7 @@ Arr::remove( array|object $collection, string|array $key, string $separator = &#
 Set a $value in a $collection using $separator notation.
 
 ```php
-Arr::set( array|object $collection, string $key, mixed $value, string $separator = &#039;.&#039; ): array|object
+Arr::set( array|object $collection, string $key, mixed $value, string $separator = '.' ): array|object
 ```
 
 
@@ -359,7 +359,7 @@ Arr::set( array|object $collection, string $key, mixed $value, string $separator
 Sort a $collection by value, by a closure or by a property $sorter along a $direction
 
 ```php
-Arr::sort( array|object $collection, string $direction = &#039;ASC&#039;, null|callable|string $sorter = null ): array|object
+Arr::sort( array|object $collection, string $direction = 'ASC', null|callable|string $sorter = null ): array|object
 ```
 
 
@@ -383,7 +383,7 @@ Arr::sort( array|object $collection, string $direction = &#039;ASC&#039;, null|c
 Sort a $collection by keys or properties by $direction
 
 ```php
-Arr::sortKeys( array|object $collection, string $direction = &#039;ASC&#039; ): array|object
+Arr::sortKeys( array|object $collection, string $direction = 'ASC' ): array|object
 ```
 
 
@@ -612,7 +612,7 @@ Arr::divide( array $array ): array
 Flatten a multidimensional $array with $separator notation
 
 ```php
-Arr::dot( array $array, string $separator = &#039;.&#039;, null|string $parent = null ): array
+Arr::dot( array $array, string $separator = '.', null|string $parent = null ): array
 ```
 
 
@@ -660,7 +660,7 @@ Arr::each( array $array, callable $callback, boolean $passKey = false ): array
 Find all items in an $array that pass a $callback truth test
 
 ```php
-Arr::filter( array $array, callable $callback, string|integer $pass = &#039;value&#039;, boolean $normalize = false ): array
+Arr::filter( array $array, callable $callback, string|integer $pass = 'value', boolean $normalize = false ): array
 ```
 
 
@@ -848,7 +848,7 @@ Arr::hasAny( array $array, array $keys ): boolean
 Implode an $array
 
 ```php
-Arr::implode( array $array, string $glue = &#039;&#039; ): string
+Arr::implode( array $array, string $glue = '' ): string
 ```
 
 
@@ -1515,7 +1515,7 @@ Arr::size( array $array ): integer
 Unflatten a previously flattened $array using $separator notation
 
 ```php
-Arr::undot( array $array, string $separator = &#039;.&#039; ): array
+Arr::undot( array $array, string $separator = '.' ): array
 ```
 
 
@@ -1593,7 +1593,7 @@ Arr::without( array $array, mixed $values ): array
 Get a value of a $collection by a $key of $separator notation with $default fallback
 
 ```php
-Collection::get( array|object $collection, string $key = &#039;&#039;, mixed $default = null, string $separator = &#039;.&#039; ): mixed
+Collection::get( array|object $collection, string $key = '', mixed $default = null, string $separator = '.' ): mixed
 ```
 
 
@@ -1663,7 +1663,7 @@ Collection::keys( array|object $collection ): array
 Remove a $key value in a $collection using $separator notation.
 
 ```php
-Collection::remove( array|object $collection, string|array $key, string $separator = &#039;.&#039; ): array|object
+Collection::remove( array|object $collection, string|array $key, string $separator = '.' ): array|object
 ```
 
 
@@ -1687,7 +1687,7 @@ Collection::remove( array|object $collection, string|array $key, string $separat
 Set a $value in a $collection using $separator notation.
 
 ```php
-Collection::set( array|object $collection, string $key, mixed $value, string $separator = &#039;.&#039; ): array|object
+Collection::set( array|object $collection, string $key, mixed $value, string $separator = '.' ): array|object
 ```
 
 
@@ -1712,7 +1712,7 @@ Collection::set( array|object $collection, string $key, mixed $value, string $se
 Sort a $collection by value, by a closure or by a property $sorter along a $direction
 
 ```php
-Collection::sort( array|object $collection, string $direction = &#039;ASC&#039;, null|callable|string $sorter = null ): array|object
+Collection::sort( array|object $collection, string $direction = 'ASC', null|callable|string $sorter = null ): array|object
 ```
 
 
@@ -1736,7 +1736,7 @@ Collection::sort( array|object $collection, string $direction = &#039;ASC&#039;,
 Sort a $collection by keys or properties by $direction
 
 ```php
-Collection::sortKeys( array|object $collection, string $direction = &#039;ASC&#039; ): array|object
+Collection::sortKeys( array|object $collection, string $direction = 'ASC' ): array|object
 ```
 
 
@@ -1892,7 +1892,7 @@ Func::throttle( callable $function, integer $miliseconds = 300 ): void
 Parse the $plural or $singular or $none template of a $number
 
 ```php
-Num::accord( float $number, string $plural, string $singular, string $none = &#039;&#039; ): string
+Num::accord( float $number, string $plural, string $singular, string $none = '' ): string
 ```
 
 
@@ -1940,7 +1940,7 @@ Num::fileSize( float $bytes, integer $decimals ): string
 Format $number
 
 ```php
-Num::format( float $number, integer $decimals, \Utility\string $decimalPoint = &#039;.&#039;, \Utility\string $thousandSeparator = &#039;,&#039; ): string
+Num::format( float $number, integer $decimals, \Utility\string $decimalPoint = '.', \Utility\string $thousandSeparator = ',' ): string
 ```
 
 
@@ -2172,7 +2172,7 @@ Num::min( float $number, float $min ): float
 Get the ordinal form of a $number using a $template
 
 ```php
-Num::ordinal( float $number, string $template = &#039;%number&lt;sup&gt;%ordinal&lt;/sup&gt;&#039; ): string
+Num::ordinal( float $number, string $template = '%number&lt;sup&gt;%ordinal&lt;/sup&gt;' ): string
 ```
 
 
@@ -2195,7 +2195,7 @@ Num::ordinal( float $number, string $template = &#039;%number&lt;sup&gt;%ordinal
 Pad a $number to a $length with $pad from a $direction
 
 ```php
-Num::pad( float $number, integer $length, string $pad = &#039;0&#039;, string $direction = &#039;left&#039; ): string
+Num::pad( float $number, integer $length, string $pad = '0', string $direction = 'left' ): string
 ```
 
 
@@ -2253,7 +2253,7 @@ Num::percentOf( float $number, float $normal = 100 ): float
 Get a value of a $collection by a $key of $separator notation with $default fallback
 
 ```php
-Obj::get( array|object $collection, string $key = &#039;&#039;, mixed $default = null, string $separator = &#039;.&#039; ): mixed
+Obj::get( array|object $collection, string $key = '', mixed $default = null, string $separator = '.' ): mixed
 ```
 
 
@@ -2323,7 +2323,7 @@ Obj::keys( array|object $collection ): array
 Remove a $key value in a $collection using $separator notation.
 
 ```php
-Obj::remove( array|object $collection, string|array $key, string $separator = &#039;.&#039; ): array|object
+Obj::remove( array|object $collection, string|array $key, string $separator = '.' ): array|object
 ```
 
 
@@ -2347,7 +2347,7 @@ Obj::remove( array|object $collection, string|array $key, string $separator = &#
 Set a $value in a $collection using $separator notation.
 
 ```php
-Obj::set( array|object $collection, string $key, mixed $value, string $separator = &#039;.&#039; ): array|object
+Obj::set( array|object $collection, string $key, mixed $value, string $separator = '.' ): array|object
 ```
 
 
@@ -2372,7 +2372,7 @@ Obj::set( array|object $collection, string $key, mixed $value, string $separator
 Sort a $collection by value, by a closure or by a property $sorter along a $direction
 
 ```php
-Obj::sort( array|object $collection, string $direction = &#039;ASC&#039;, null|callable|string $sorter = null ): array|object
+Obj::sort( array|object $collection, string $direction = 'ASC', null|callable|string $sorter = null ): array|object
 ```
 
 
@@ -2396,7 +2396,7 @@ Obj::sort( array|object $collection, string $direction = &#039;ASC&#039;, null|c
 Sort a $collection by keys or properties by $direction
 
 ```php
-Obj::sortKeys( array|object $collection, string $direction = &#039;ASC&#039; ): array|object
+Obj::sortKeys( array|object $collection, string $direction = 'ASC' ): array|object
 ```
 
 
@@ -2541,7 +2541,7 @@ Obj::unpack( object $data, null|string $attribute = null ): object
 Get $plural or $singular string depending on $number
 
 ```php
-Str::accord( string|float $number, string $plural, string $singular, string $none = &#039;&#039; ): string
+Str::accord( string|float $number, string $plural, string $singular, string $none = '' ): string
 ```
 
 
@@ -2633,7 +2633,7 @@ Str::append( string $string, string $append ): string
 Convert a $string to ASCII removing all accents
 
 ```php
-Str::ascii( string $string, string $language = &#039;en&#039;, boolean $removeUnsupported = true ): string
+Str::ascii( string $string, string $language = 'en', boolean $removeUnsupported = true ): string
 ```
 
 
@@ -2753,7 +2753,7 @@ Str::bool( string $string, array $trueValues = array(), array $falseValues = arr
 Convert a $string to camelCase using a specific $language
 
 ```php
-Str::camel( string $string, string $language = &#039;&#039; ): string
+Str::camel( string $string, string $language = '' ): string
 ```
 
 
@@ -3704,7 +3704,7 @@ Str::length( string $string, null|string $encoding = null ): integer
 Safely truncate $string in $length
 
 ```php
-Str::limit( string $string, integer $length, string $append = &#039;...&#039;, null|string $encoding = null ): string
+Str::limit( string $string, integer $length, string $append = '...', null|string $encoding = null ): string
 ```
 
 
@@ -3729,7 +3729,7 @@ Str::limit( string $string, integer $length, string $append = &#039;...&#039;, n
 Limit $string to a $limit of words
 
 ```php
-Str::limitWords( string $string, integer $length, \Utility\string $append = &#039;...&#039; ): string
+Str::limitWords( string $string, integer $length, \Utility\string $append = '...' ): string
 ```
 
 
@@ -3822,7 +3822,7 @@ Str::lowerFirst( string $string, null|string $encoding = null ): string
 Check if $string matches $pattern
 
 ```php
-Str::matches( string $string, string $pattern, string $option = &#039;msr&#039; ): boolean
+Str::matches( string $string, string $pattern, string $option = 'msr' ): boolean
 ```
 
 
@@ -3868,7 +3868,7 @@ Str::normalize( string $string ): string
 Get ordinal version of $number according to $template
 
 ```php
-Str::ordinal( string|float $number, string $template = &#039;%number&lt;sup&gt;%ordinal&lt;/sup&gt;&#039; ): string
+Str::ordinal( string|float $number, string $template = '%number&lt;sup&gt;%ordinal&lt;/sup&gt;' ): string
 ```
 
 
@@ -3891,7 +3891,7 @@ Str::ordinal( string|float $number, string $template = &#039;%number&lt;sup&gt;%
 Add $pad to $string until it reaches $length
 
 ```php
-Str::pad( string $string, integer $length, string $pad = &#039; &#039;, string $direction = &#039;right&#039;, null|string $encoding = null ): string
+Str::pad( string $string, integer $length, string $pad = ' ', string $direction = 'right', null|string $encoding = null ): string
 ```
 
 
@@ -3917,7 +3917,7 @@ Str::pad( string $string, integer $length, string $pad = &#039; &#039;, string $
 Add $pad to both ends of a $string until it reaches $length
 
 ```php
-Str::padBoth( string $string, integer $length, string $pad = &#039; &#039;, null|string $encoding = null ): string
+Str::padBoth( string $string, integer $length, string $pad = ' ', null|string $encoding = null ): string
 ```
 
 
@@ -3942,7 +3942,7 @@ Str::padBoth( string $string, integer $length, string $pad = &#039; &#039;, null
 Add $pad to the left side of a $string until it reaches $length
 
 ```php
-Str::padLeft( string $string, integer $length, string $pad = &#039; &#039;, null|string $encoding = null ): string
+Str::padLeft( string $string, integer $length, string $pad = ' ', null|string $encoding = null ): string
 ```
 
 
@@ -3967,7 +3967,7 @@ Str::padLeft( string $string, integer $length, string $pad = &#039; &#039;, null
 Add $pad to the right side of a $string until it reaches $length
 
 ```php
-Str::padRight( string $string, integer $length, string $pad = &#039; &#039;, null|string $encoding = null ): string
+Str::padRight( string $string, integer $length, string $pad = ' ', null|string $encoding = null ): string
 ```
 
 
@@ -4275,7 +4275,7 @@ Str::slice( string $string, integer $start, null|integer $end = null, null|strin
 Convert $string to slug-case
 
 ```php
-Str::slug( string $string, string $language = &#039;en&#039; ): string
+Str::slug( string $string, string $language = 'en' ): string
 ```
 
 
@@ -4298,7 +4298,7 @@ Str::slug( string $string, string $language = &#039;en&#039; ): string
 Remove special characters and change whitespace characters with $delimiter in $string
 
 ```php
-Str::slugify( string $string, string $delimiter = &#039;-&#039;, string $language = &#039;en&#039; ): string
+Str::slugify( string $string, string $delimiter = '-', string $language = 'en' ): string
 ```
 
 
@@ -4322,7 +4322,7 @@ Str::slugify( string $string, string $delimiter = &#039;-&#039;, string $languag
 Convert $string to snake_case
 
 ```php
-Str::snake( string $string, string $language = &#039;en&#039; ): string
+Str::snake( string $string, string $language = 'en' ): string
 ```
 
 
@@ -4368,7 +4368,7 @@ Str::spacesToTabs( string $string, integer $tabLength = 4 ): string
 Split $string at $pattern
 
 ```php
-Str::split( string $string, string $pattern = &#039;&#039;, null|integer $limit = null ): array
+Str::split( string $string, string $pattern = '', null|integer $limit = null ): array
 ```
 
 
@@ -4536,7 +4536,7 @@ Str::tabsToSpaces( string $string,  $tabLength = 4 ): array
 Replace template variables in $string according to associate $data array
 
 ```php
-Str::template( string $string, array $data = array(), string $varSymbol = &#039;%&#039; ): string
+Str::template( string $string, array $data = array(), string $varSymbol = '%' ): string
 ```
 
 
@@ -4632,7 +4632,7 @@ Str::titlize( string $string, array $ignore = array(), null|string $encoding = n
 Trim $characters from each end of a $string
 
 ```php
-Str::trim( string $string, string $characters = &#039; &#039; ): string
+Str::trim( string $string, string $characters = ' ' ): string
 ```
 
 
@@ -4655,7 +4655,7 @@ Str::trim( string $string, string $characters = &#039; &#039; ): string
 Trim $characters from the left side of $string
 
 ```php
-Str::trimLeft( string $string, string $characters = &#039; &#039; ): string
+Str::trimLeft( string $string, string $characters = ' ' ): string
 ```
 
 
@@ -4678,7 +4678,7 @@ Str::trimLeft( string $string, string $characters = &#039; &#039; ): string
 Trim $characters from the right side of $string
 
 ```php
-Str::trimRight( string $string, string $characters = &#039; &#039; ): string
+Str::trimRight( string $string, string $characters = ' ' ): string
 ```
 
 
@@ -4983,7 +4983,7 @@ URL::parse( string $url ): array
 Get $parts of a $url
 
 ```php
-URL::parts( string|array $url,  $parts = array(&#039;scheme&#039;, &#039;host&#039;, &#039;path&#039;) ): string
+URL::parts( string|array $url,  $parts = array('scheme', 'host', 'path') ): string
 ```
 
 
