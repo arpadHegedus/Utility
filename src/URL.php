@@ -15,13 +15,14 @@ class URL
     /**
      * Add $user and $pass to a $url
      *
-     * @param string|array $url
+     * @param null|string|array $url
      * @param string $user
      * @param null|string $pass
      * @return string
      */
     public static function auth($url, string $user, $pass = null) : string
     {
+        $url = $url ?? static::current();
         $url = is_string($url) ? static::parse($url) : $url;
         $url['user'] = $user;
         if ($pass) {
@@ -98,24 +99,26 @@ class URL
     /**
      * Get or $set the fragment of a $url
      *
-     * @param string|array $url
+     * @param null|string|array $url
      * @param boolean $set
      * @return string
      */
     public static function fragment($url, $set = false) : string
     {
+        $url = $url ?? static::current();
         return $set === false ? static::parts($url, ['path']) : static::fragmentSet($url, $set);
     }
 
     /**
      * Set $fragment part of a $url
      *
-     * @param string|array $url
+     * @param null|string|array $url
      * @param string $fragment
      * @return string
      */
     public static function fragmentSet($url, string $fragment) : string
     {
+        $url = $url ?? static::current();
         $url = is_string($url) ? static::parse($url) : $url;
         $url['fragment'] = $fragment;
         if (empty($url['fragment'])) {
@@ -127,24 +130,26 @@ class URL
     /**
      * Get or $set the host of a $url
      *
-     * @param string|array $url
+     * @param null|string|array $url
      * @param boolean $set
      * @return string
      */
     public static function host($url, $set = false) : string
     {
+        $url = $url ?? static::current();
         return $set === false ? static::parts($url, ['path']) : static::hostSet($url, $set);
     }
 
     /**
      * Set $host part of a $url
      *
-     * @param string|array $url
+     * @param null|string|array $url
      * @param string $host
      * @return string
      */
     public static function hostSet($url, string $host) : string
     {
+        $url = $url ?? static::current();
         $url = is_string($url) ? static::parse($url) : $url;
         $url['host'] = $host;
         if (empty($url['host'])) {
@@ -180,12 +185,13 @@ class URL
     /**
      * Get $parts of a $url
      *
-     * @param string|array $url
+     * @param null|string|array $url
      * @param array|string $part
      * @return string
      */
     public static function parts($url, $parts = ['scheme', 'host', 'path']) : string
     {
+        $url = $url ?? static::current();
         $url = is_string($url) ? static::parse($url) : $url;
         $parts = is_string($parts) ? [$parts] : $parts;
         if (!empty($parts)) {
@@ -199,35 +205,38 @@ class URL
     /**
      * Get the pass part of a $url
      *
-     * @param string|array $url
+     * @param null|string|array $url
      * @return string
      */
     public static function pass($url) : string
     {
+        $url = $url ?? static::current();
         return static::parts($url, ['pass']);
     }
 
     /**
      * Get or $set the path of a $url
      *
-     * @param string|array $url
+     * @param null|string|array $url
      * @param boolean $set
      * @return string
      */
     public static function path($url, $set = false) : string
     {
+        $url = $url ?? static::current();
         return $set === false ? static::parts($url, ['path']) : static::pathSet($url, $set);
     }
 
     /**
      * Remove $search string or pattern from $url path
      *
-     * @param [type] $url
+     * @param null|string|array $url
      * @param string $remove
      * @return string
      */
     public static function pathRemove($url, string $search) : string
     {
+        $url = $url ?? static::current();
         $url = is_string($url) ? static::parse($url) : $url;
         if (!isset($url['path'])) {
             return static::build($url);
@@ -239,12 +248,13 @@ class URL
     /**
      * Set $path part of a $url
      *
-     * @param string|array $url
+     * @param null|string|array $url
      * @param string $path
      * @return string
      */
     public static function pathSet($url, string $path) : string
     {
+        $url = $url ?? static::current();
         $url = is_string($url) ? static::parse($url) : $url;
         $url['path'] = $path;
         if (empty($url['path'])) {
@@ -256,24 +266,26 @@ class URL
     /**
      * Get or $set the port of a $url
      *
-     * @param string|array $url
+     * @param null|string|array $url
      * @param boolean $set
      * @return string
      */
     public static function port($url, $set = false) : string
     {
+        $url = $url ?? static::current();
         return $set === false ? static::parts($url, ['path']) : static::portSet($url, $set);
     }
 
     /**
      * Set $port part of a $url
      *
-     * @param string|array $url
-     * @param string $port
+     * @param null|string|array $url
+     * @param string|int $port
      * @return string
      */
-    public static function portSet($url, string $port) : string
+    public static function portSet($url, $port) : string
     {
+        $url = $url ?? static::current();
         $url = is_string($url) ? static::parse($url) : $url;
         $url['port'] = $port;
         if (empty($url['port'])) {
@@ -285,25 +297,27 @@ class URL
     /**
      * Get or $set the query of a $url
      *
-     * @param string|array $url
+     * @param null|string|array $url
      * @param boolean $set
      * @return string
      */
     public static function query($url, $set = false) : string
     {
+        $url = $url ?? static::current();
         return $set === false ? static::parts($url, ['query']) : static::querySet($url, $set);
     }
 
     /**
      * Add a parameter $key and $value to the query of the $url
      *
-     * @param string|array $url
+     * @param null|string|array $url
      * @param string $key
      * @param mixed $value
      * @return string
      */
     public static function queryAdd($url, string $key, $value) : string
     {
+        $url = $url ?? static::current();
         $url = is_string($url) ? static::parse($url) : $url;
         if (!isset($url['query'])) {
             return static::querySet($url, [$key => $value]);
@@ -317,13 +331,13 @@ class URL
     /**
      * Remove a parameter by $key from the query of the $url
      *
-     * @param string|array $url
+     * @param null|string|array $url
      * @param string|array $key
-     * @param mixed $value
      * @return string
      */
-    public static function queryRemove($url, $key) : string
+    public static function queryRemove($url, $keys) : string
     {
+        $url = $url ?? static::current();
         $url = is_string($url) ? static::parse($url) : $url;
         if (!isset($url['query'])) {
             return static::querySet($url, [$key => $value]);
@@ -340,12 +354,13 @@ class URL
     /**
      * Set the $url path part to $data
      *
-     * @param string|array $url
+     * @param null|string|array $url
      * @param string|array $data
      * @return string
      */
     public static function querySet($url, $data) : string
     {
+        $url = $url ?? static::current();
         $url = is_string($url) ? static::parse($url) : $url;
         $url['query'] = is_string($data) ? $data : http_build_query($data);
         if (empty($url['query'])) {
@@ -357,24 +372,26 @@ class URL
     /**
      * Get or $set the scheme of a $url
      *
-     * @param string|array $url
+     * @param null|string|array $url
      * @param boolean $set
      * @return string
      */
     public static function scheme($url, $set = false) : string
     {
+        $url = $url ?? static::current();
         return $set === false ? static::parts($url, ['path']) : static::schemeSet($url, $set);
     }
 
     /**
      * Set $scheme part of a $url
      *
-     * @param string|array $url
+     * @param null|string|array $url
      * @param string $scheme
      * @return string
      */
     public static function schemeSet($url, string $scheme) : string
     {
+        $url = $url ?? static::current();
         $url = is_string($url) ? static::parse($url) : $url;
         $url['scheme'] = $scheme;
         if (empty($url['scheme'])) {
@@ -386,12 +403,13 @@ class URL
     /**
      * Get the user part of a $url
      *
-     * @param string|array $url
+     * @param null|string|array $url
      * @param false|string $set
      * @return string
      */
     public static function user($url, $set = false) : string
     {
+        $url = $url ?? static::current();
         return $set === false ? static::parts($url, ['user']) : static::auth($url, $user);
     }
 }

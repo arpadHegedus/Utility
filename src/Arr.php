@@ -89,7 +89,7 @@ class Arr extends Collection
      * @param bool $normalize
      * @return array
      */
-    public static function clean(array $array, bool $normalize = true)
+    public static function clean(array $array, bool $normalize = true) : array
     {
         return static::filter($array, function ($value) {
             return (bool) $value;
@@ -113,7 +113,7 @@ class Arr extends Collection
      *
      * @param array $array
      * @param array $values
-     * @return boolean
+     * @return bool
      */
     public static function containsAll(array $array, array $values) : bool
     {
@@ -249,7 +249,7 @@ class Arr extends Collection
     }
 
     /**
-     * Find the first item in an $array that passes $callback truth test
+     * Find all items in an $array that passes $callback truth test
      *
      * @param array $array
      * @param callable $callback
@@ -705,7 +705,7 @@ class Arr extends Collection
      * Remove a $value from an $array
      *
      * @param array $array
-     * @param mixed $toRemove
+     * @param mixed $value
      * @param bool $normalize
      * @return array
      */

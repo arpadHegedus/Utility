@@ -979,10 +979,9 @@ class Str extends Misc
      *
      * @param string $string
      * @param string $pattern
-     * @param string $option
      * @return bool
      */
-    public static function matches(string $string, string $pattern, string $option = 'msr') : bool
+    public static function matches(string $string, string $pattern) : bool
     {
         return (bool) preg_match($pattern, $string);
     }
@@ -1668,6 +1667,7 @@ class Str extends Misc
      * Get an array of words from $string
      *
      * @param string $string
+     * @param bool $unique
      * @return array
      */
     public static function words(string $string, bool $unique = true) : array

@@ -16,7 +16,7 @@ class Obj extends Collection
      * @param string $key
      * @return bool
      */
-    public static function has($object, string $key)
+    public static function has($object, string $key) : bool
     {
         if (property_exists(get_class($object), $key)) {
             return true;
