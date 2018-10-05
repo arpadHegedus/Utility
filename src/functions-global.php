@@ -6,6 +6,15 @@
  * @package utility
  */
 
+use Utility\Arr;
+use Utility\Collection;
+use Utility\Func;
+use Utility\Misc;
+use Utility\Num;
+use Utility\Obj;
+use Utility\Str;
+use Utility\URL;
+
 /**
  * Parse the $plural or $singular or $none template of a $number
  *

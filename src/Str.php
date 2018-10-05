@@ -277,7 +277,8 @@ class Str extends Misc
      */
     public static function collapse(string $string) : string
     {
-        $string = static::regexReplace($string, '/[[:space:]]+/mi', ' ');
+        $string = str_replace("&nbsp;", " ", $string);
+        $string = static::regexReplace($string, '/[[:space:]|]+/mi', ' ');
         $string = static::trim($string);
         return $string;
     }
@@ -894,7 +895,9 @@ class Str extends Misc
     {
         $encoding = $encoding ?? static::getEncoding();
         $string = static::collapse($string);
+        $string = str_replace(['<', '>'], [' <', '> '], $string);
         $string = strip_tags($string);
+        $string = preg_replace('/[[:space:]]+/', ' ', $string);
         $string = static::trim($string);
         $return = mb_substr($string, 0, $length, $encoding);
         $lastSpace = mb_strrpos($return, ' ', 0, $encoding);
@@ -917,7 +920,9 @@ class Str extends Misc
     public static function limitWords(string $string, int $length, string $append = '...')
     {
         $string = static::collapse($string);
+        $string = str_replace(['<', '>'], [' <', '> '], $string);
         $string = strip_tags($string);
+        $string = preg_replace('/[[:space:]]+/', ' ', $string);
         $string = static::trim($string);
         $array = static::split($string, '/[[:space:]]+/');
         $limitedArray = array_slice($array, 0, $length);
