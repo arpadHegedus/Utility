@@ -706,7 +706,7 @@ Arr::find( array $array, callable $callback, boolean $passKey = false ): void|mi
 
 ### findAll
 
-Find the first item in an $array that passes $callback truth test
+Find all items in an $array that passes $callback truth test
 
 ```php
 Arr::findAll( array $array, callable $callback, boolean $passKey ): array
@@ -1354,7 +1354,7 @@ Arr::removeLast( array $array ): array
 Remove a $value from an $array
 
 ```php
-Arr::removeValue( array $array,  $value, boolean $normalize = true ): array
+Arr::removeValue( array $array, mixed $value, boolean $normalize = true ): array
 ```
 
 
@@ -1365,7 +1365,7 @@ Arr::removeValue( array $array,  $value, boolean $normalize = true ): array
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `$array` | **array** |  |
-| `$value` | **** |  |
+| `$value` | **mixed** |  |
 | `$normalize` | **boolean** |  |
 
 
@@ -3822,7 +3822,7 @@ Str::lowerFirst( string $string, null|string $encoding = null ): string
 Check if $string matches $pattern
 
 ```php
-Str::matches( string $string, string $pattern, string $option = 'msr' ): boolean
+Str::matches( string $string, string $pattern ): boolean
 ```
 
 
@@ -3834,7 +3834,6 @@ Str::matches( string $string, string $pattern, string $option = 'msr' ): boolean
 |-----------|------|-------------|
 | `$string` | **string** |  |
 | `$pattern` | **string** |  |
-| `$option` | **string** |  |
 
 
 
@@ -4769,7 +4768,7 @@ Str::upperFirst( string $string, null|string $encoding = null ): string
 Get an array of words from $string
 
 ```php
-Str::words( string $string, \Utility\bool $unique = true ): array
+Str::words( string $string, boolean $unique = true ): array
 ```
 
 
@@ -4780,7 +4779,7 @@ Str::words( string $string, \Utility\bool $unique = true ): array
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `$string` | **string** |  |
-| `$unique` | **\Utility\bool** |  |
+| `$unique` | **boolean** |  |
 
 
 
@@ -4801,7 +4800,7 @@ Str::words( string $string, \Utility\bool $unique = true ): array
 Add $user and $pass to a $url
 
 ```php
-URL::auth( string|array $url, string $user, null|string $pass = null ): string
+URL::auth( null|string|array $url, string $user, null|string $pass = null ): string
 ```
 
 
@@ -4811,7 +4810,7 @@ URL::auth( string|array $url, string $user, null|string $pass = null ): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$url` | **string&#124;array** |  |
+| `$url` | **null&#124;string&#124;array** |  |
 | `$user` | **string** |  |
 | `$pass` | **null&#124;string** |  |
 
@@ -4869,7 +4868,7 @@ URL::current( array $parts = array() ): string
 Get or $set the fragment of a $url
 
 ```php
-URL::fragment( string|array $url, boolean $set = false ): string
+URL::fragment( null|string|array $url, boolean $set = false ): string
 ```
 
 
@@ -4879,7 +4878,7 @@ URL::fragment( string|array $url, boolean $set = false ): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$url` | **string&#124;array** |  |
+| `$url` | **null&#124;string&#124;array** |  |
 | `$set` | **boolean** |  |
 
 
@@ -4892,7 +4891,7 @@ URL::fragment( string|array $url, boolean $set = false ): string
 Set $fragment part of a $url
 
 ```php
-URL::fragmentSet( string|array $url, string $fragment ): string
+URL::fragmentSet( null|string|array $url, string $fragment ): string
 ```
 
 
@@ -4902,7 +4901,7 @@ URL::fragmentSet( string|array $url, string $fragment ): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$url` | **string&#124;array** |  |
+| `$url` | **null&#124;string&#124;array** |  |
 | `$fragment` | **string** |  |
 
 
@@ -4915,7 +4914,7 @@ URL::fragmentSet( string|array $url, string $fragment ): string
 Get or $set the host of a $url
 
 ```php
-URL::host( string|array $url, boolean $set = false ): string
+URL::host( null|string|array $url, boolean $set = false ): string
 ```
 
 
@@ -4925,7 +4924,7 @@ URL::host( string|array $url, boolean $set = false ): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$url` | **string&#124;array** |  |
+| `$url` | **null&#124;string&#124;array** |  |
 | `$set` | **boolean** |  |
 
 
@@ -4938,7 +4937,7 @@ URL::host( string|array $url, boolean $set = false ): string
 Set $host part of a $url
 
 ```php
-URL::hostSet( string|array $url, string $host ): string
+URL::hostSet( null|string|array $url, string $host ): string
 ```
 
 
@@ -4948,7 +4947,7 @@ URL::hostSet( string|array $url, string $host ): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$url` | **string&#124;array** |  |
+| `$url` | **null&#124;string&#124;array** |  |
 | `$host` | **string** |  |
 
 
@@ -4983,7 +4982,7 @@ URL::parse( string $url ): array
 Get $parts of a $url
 
 ```php
-URL::parts( string|array $url,  $parts = array('scheme', 'host', 'path') ): string
+URL::parts( null|string|array $url,  $parts = array('scheme', 'host', 'path') ): string
 ```
 
 
@@ -4993,7 +4992,7 @@ URL::parts( string|array $url,  $parts = array('scheme', 'host', 'path') ): stri
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$url` | **string&#124;array** |  |
+| `$url` | **null&#124;string&#124;array** |  |
 | `$parts` | **** |  |
 
 
@@ -5006,7 +5005,7 @@ URL::parts( string|array $url,  $parts = array('scheme', 'host', 'path') ): stri
 Get the pass part of a $url
 
 ```php
-URL::pass( string|array $url ): string
+URL::pass( null|string|array $url ): string
 ```
 
 
@@ -5016,7 +5015,7 @@ URL::pass( string|array $url ): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$url` | **string&#124;array** |  |
+| `$url` | **null&#124;string&#124;array** |  |
 
 
 
@@ -5028,7 +5027,7 @@ URL::pass( string|array $url ): string
 Get or $set the path of a $url
 
 ```php
-URL::path( string|array $url, boolean $set = false ): string
+URL::path( null|string|array $url, boolean $set = false ): string
 ```
 
 
@@ -5038,7 +5037,7 @@ URL::path( string|array $url, boolean $set = false ): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$url` | **string&#124;array** |  |
+| `$url` | **null&#124;string&#124;array** |  |
 | `$set` | **boolean** |  |
 
 
@@ -5051,7 +5050,7 @@ URL::path( string|array $url, boolean $set = false ): string
 Remove $search string or pattern from $url path
 
 ```php
-URL::pathRemove( \Utility\[type] $url, \Utility\string $search ): string
+URL::pathRemove( null|string|array $url, \Utility\string $search ): string
 ```
 
 
@@ -5061,7 +5060,7 @@ URL::pathRemove( \Utility\[type] $url, \Utility\string $search ): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$url` | **\Utility\[type]** |  |
+| `$url` | **null&#124;string&#124;array** |  |
 | `$search` | **\Utility\string** |  |
 
 
@@ -5074,7 +5073,7 @@ URL::pathRemove( \Utility\[type] $url, \Utility\string $search ): string
 Set $path part of a $url
 
 ```php
-URL::pathSet( string|array $url, string $path ): string
+URL::pathSet( null|string|array $url, string $path ): string
 ```
 
 
@@ -5084,7 +5083,7 @@ URL::pathSet( string|array $url, string $path ): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$url` | **string&#124;array** |  |
+| `$url` | **null&#124;string&#124;array** |  |
 | `$path` | **string** |  |
 
 
@@ -5097,7 +5096,7 @@ URL::pathSet( string|array $url, string $path ): string
 Get or $set the port of a $url
 
 ```php
-URL::port( string|array $url, boolean $set = false ): string
+URL::port( null|string|array $url, boolean $set = false ): string
 ```
 
 
@@ -5107,7 +5106,7 @@ URL::port( string|array $url, boolean $set = false ): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$url` | **string&#124;array** |  |
+| `$url` | **null&#124;string&#124;array** |  |
 | `$set` | **boolean** |  |
 
 
@@ -5120,7 +5119,7 @@ URL::port( string|array $url, boolean $set = false ): string
 Set $port part of a $url
 
 ```php
-URL::portSet( string|array $url, string $port ): string
+URL::portSet( null|string|array $url, string|integer $port ): string
 ```
 
 
@@ -5130,8 +5129,8 @@ URL::portSet( string|array $url, string $port ): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$url` | **string&#124;array** |  |
-| `$port` | **string** |  |
+| `$url` | **null&#124;string&#124;array** |  |
+| `$port` | **string&#124;integer** |  |
 
 
 
@@ -5143,7 +5142,7 @@ URL::portSet( string|array $url, string $port ): string
 Get or $set the query of a $url
 
 ```php
-URL::query( string|array $url, boolean $set = false ): string
+URL::query( null|string|array $url, boolean $set = false ): string
 ```
 
 
@@ -5153,7 +5152,7 @@ URL::query( string|array $url, boolean $set = false ): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$url` | **string&#124;array** |  |
+| `$url` | **null&#124;string&#124;array** |  |
 | `$set` | **boolean** |  |
 
 
@@ -5166,7 +5165,7 @@ URL::query( string|array $url, boolean $set = false ): string
 Add a parameter $key and $value to the query of the $url
 
 ```php
-URL::queryAdd( string|array $url, string $key, mixed $value ): string
+URL::queryAdd( null|string|array $url, string $key, mixed $value ): string
 ```
 
 
@@ -5176,7 +5175,7 @@ URL::queryAdd( string|array $url, string $key, mixed $value ): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$url` | **string&#124;array** |  |
+| `$url` | **null&#124;string&#124;array** |  |
 | `$key` | **string** |  |
 | `$value` | **mixed** |  |
 
@@ -5190,7 +5189,7 @@ URL::queryAdd( string|array $url, string $key, mixed $value ): string
 Remove a parameter by $key from the query of the $url
 
 ```php
-URL::queryRemove( string|array $url, string|array $key ): string
+URL::queryRemove( null|string|array $url,  $keys ): string
 ```
 
 
@@ -5200,8 +5199,8 @@ URL::queryRemove( string|array $url, string|array $key ): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$url` | **string&#124;array** |  |
-| `$key` | **string&#124;array** |  |
+| `$url` | **null&#124;string&#124;array** |  |
+| `$keys` | **** |  |
 
 
 
@@ -5213,7 +5212,7 @@ URL::queryRemove( string|array $url, string|array $key ): string
 Set the $url path part to $data
 
 ```php
-URL::querySet( string|array $url, string|array $data ): string
+URL::querySet( null|string|array $url, string|array $data ): string
 ```
 
 
@@ -5223,7 +5222,7 @@ URL::querySet( string|array $url, string|array $data ): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$url` | **string&#124;array** |  |
+| `$url` | **null&#124;string&#124;array** |  |
 | `$data` | **string&#124;array** |  |
 
 
@@ -5236,7 +5235,7 @@ URL::querySet( string|array $url, string|array $data ): string
 Get or $set the scheme of a $url
 
 ```php
-URL::scheme( string|array $url, boolean $set = false ): string
+URL::scheme( null|string|array $url, boolean $set = false ): string
 ```
 
 
@@ -5246,7 +5245,7 @@ URL::scheme( string|array $url, boolean $set = false ): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$url` | **string&#124;array** |  |
+| `$url` | **null&#124;string&#124;array** |  |
 | `$set` | **boolean** |  |
 
 
@@ -5259,7 +5258,7 @@ URL::scheme( string|array $url, boolean $set = false ): string
 Set $scheme part of a $url
 
 ```php
-URL::schemeSet( string|array $url, string $scheme ): string
+URL::schemeSet( null|string|array $url, string $scheme ): string
 ```
 
 
@@ -5269,7 +5268,7 @@ URL::schemeSet( string|array $url, string $scheme ): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$url` | **string&#124;array** |  |
+| `$url` | **null&#124;string&#124;array** |  |
 | `$scheme` | **string** |  |
 
 
@@ -5282,7 +5281,7 @@ URL::schemeSet( string|array $url, string $scheme ): string
 Get the user part of a $url
 
 ```php
-URL::user( string|array $url, false|string $set = false ): string
+URL::user( null|string|array $url, false|string $set = false ): string
 ```
 
 
@@ -5292,7 +5291,7 @@ URL::user( string|array $url, false|string $set = false ): string
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$url` | **string&#124;array** |  |
+| `$url` | **null&#124;string&#124;array** |  |
 | `$set` | **false&#124;string** |  |
 
 
@@ -5303,4 +5302,4 @@ URL::user( string|array $url, false|string $set = false ): string
 
 
 --------
-> This document was automatically generated from source code comments on 2018-10-03 using [phpDocumentor](http://www.phpdoc.org/) and [cvuorinen/phpdoc-markdown-public](https://github.com/cvuorinen/phpdoc-markdown-public)
+> This document was automatically generated from source code comments on 2018-10-05 using [phpDocumentor](http://www.phpdoc.org/) and [cvuorinen/phpdoc-markdown-public](https://github.com/cvuorinen/phpdoc-markdown-public)
