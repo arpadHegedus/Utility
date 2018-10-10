@@ -51,6 +51,22 @@ class Func
     }
 
     /**
+     * Call a $function with $arguments whether it is a reference array string or an anonymus function
+     *
+     * @param null|callable $function
+     * @param array $arguments
+     * @return mixed
+     */
+    public static function call(? callable $function, array $arguments = [])
+    {
+        if (!$function) {
+            return;
+        }
+        $isRef = is_array($function) || is_string($function);
+        return $isRef ? call_user_func_array($function, $arguments) : $function(...$arguments);
+    }
+
+    /**
      * Limit a $function to be only called once
      *
      * @param callable $function

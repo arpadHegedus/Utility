@@ -340,10 +340,10 @@ class URL
         $url = $url ?? static::current();
         $url = is_string($url) ? static::parse($url) : $url;
         if (!isset($url['query'])) {
-            return static::querySet($url, [$key => $value]);
+            return static::build($url);
         }
         parse_str($url['query'], $q);
-        $q = Arr::remove($q, $key);
+        $q = Arr::remove($q, $keys);
         $url['query'] = http_build_query($q);
         if (empty($url['query'])) {
             unset($url['query']);
