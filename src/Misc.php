@@ -284,7 +284,7 @@ class Misc
             $return .= PHP_EOL;
             foreach ($properties as $property) {
                 $return .= $indent . $oneIndent . "<span class=\"variable\">$$property</span>";
-                $value = isset($class::$$property) ? $class::$$property : $data->$property;
+                $value = $class::$$property ?? $data->$property ?? '<unknown>';
                 $return .= ' = ';
                 $return .= static::doDump($value, $depth + 1, false);
                 $return .= ',';

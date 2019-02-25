@@ -81,11 +81,11 @@ class URL
         }
         if (!empty($_SERVER['SERVER_PORT']) &&
             (
-                $scheme === 'http' && $_SERVER['SERVER_PORT'] !== 80 ||
-                $scheme === 'https' && $_SERVER['SERVER_PORT'] !== 443
+                $url['scheme'] === 'http' && $_SERVER['SERVER_PORT'] !== 80 ||
+                $url['scheme'] === 'https' && $_SERVER['SERVER_PORT'] !== 443
             )
         ) {
-            $url['port'] = $_SERVER['port'];
+            $url['port'] = $_SERVER['port'] ?? null;
         }
         if (!empty($_SERVER['PHP_AUTH_USER'])) {
             $url['user'] = $_SERVER['PHP_AUTH_USER'];
@@ -93,7 +93,7 @@ class URL
                 $url['pass'] = $_SERVER['PHP_AUTH_PW'];
             }
         }
-        return static::parts($url, $get);
+        return static::parts($url, $parts);
     }
 
     /**
@@ -326,6 +326,23 @@ class URL
         $q[$key] = $value;
         $url['query'] = http_build_query($q);
         return static::build($url);
+    }
+
+    /**
+     * Get the array of query args from a $url
+     *
+     * @param null|string|array $url
+     * @return array
+     */
+    public static function queryArray($url) : array
+    {
+        $url = $url ?? static::current();
+        $url = is_string($url) ? static::parse($url) : $url;
+        if (!isset($url['query'])) {
+            return [];
+        }
+        parse_str($url['query'], $query_array);
+        return $query_array;
     }
 
     /**

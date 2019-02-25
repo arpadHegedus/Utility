@@ -214,6 +214,7 @@
     * [portSet](#portset)
     * [query](#query)
     * [queryAdd](#queryadd)
+    * [queryArray](#queryarray)
     * [queryRemove](#queryremove)
     * [querySet](#queryset)
     * [scheme](#scheme)
@@ -5073,6 +5074,27 @@ URL::queryAdd( null|string|array $url, string $key, mixed $value ): string
 | `$key` | **string** |  |
 | `$value` | **mixed** |  |
 
+
+
+
+---
+
+### queryArray
+
+Get the array of query args from a $url
+
+```php
+URL::queryArray( null|string|array $url): array
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$url` | **null&#124;string&#124;array** |  |
 
 
 
