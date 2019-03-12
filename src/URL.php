@@ -346,6 +346,22 @@ class URL
     }
 
     /**
+     * Get a query parameter from a URL
+     *
+     * @param null|string|array $url
+     * @param string $parameter
+     * @return string|null
+     */
+    public static function queryGet($url, $parameter)
+    {
+        $query = static::queryArray($url);
+        if (empty($query) && !isset($query[$parameter])) {
+            return null;
+        }
+        return $query[$parameter];
+    }
+
+    /**
      * Remove a parameter by $key from the query of the $url
      *
      * @param null|string|array $url
