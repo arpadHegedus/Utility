@@ -1082,7 +1082,7 @@ class Str extends Misc
     public static function padBoth(string $string, int $length, string $pad = ' ', $encoding = null) : string
     {
         $padding = $length - static::length($string, $encoding);
-        return static::doPad($string, floor($padding / 2), ceil($padding / 2), $pad, $encoding);
+        return static::doPad($string, (int) floor($padding / 2), (int) ceil($padding / 2), $pad, $encoding);
     }
 
     /**
@@ -1713,13 +1713,13 @@ class Str extends Misc
             return $string;
         }
         $leftPad = static::sub(
-            static::repeat($pad, ceil($left / $padLength)),
+            static::repeat($pad, (int) ceil($left / $padLength)),
             0,
             $left,
             $encoding
         );
         $rightPad = static::sub(
-            static::repeat($pad, ceil($right / $padLength)),
+            static::repeat($pad, (int) ceil($right / $padLength)),
             0,
             $right,
             $encoding

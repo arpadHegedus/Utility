@@ -5079,6 +5079,7 @@ URL::queryAdd( null|string|array $url, string $key, mixed $value ): string
 
 ---
 
+<<<<<<< HEAD
 ### queryArray
 
 Get the array of query args from a $url
@@ -5100,6 +5101,8 @@ URL::queryArray( null|string|array $url): array
 
 ---
 
+=======
+>>>>>>> dcd4d3f67ff1f4542873ab52ed2ad84ddf8c8799
 ### queryRemove
 
 Remove a parameter by $key from the query of the $url
