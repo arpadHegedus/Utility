@@ -1877,7 +1877,7 @@ if (!function_exists('str_template')) {
 if (!function_exists('str_title')) {
     function str_title(string $string, $encoding = null) : string
     {
-        return Str::title($strin, $encoding);
+        return Str::title($string, $encoding);
     }
 }
 
@@ -2039,11 +2039,11 @@ if (!function_exists('url_build')) {
  * Get or $set the fragment of a $url
  *
  * @param null|string|array $url
- * @param boolean $set
+ * @param null|string $set
  * @return string
  */
 if (!function_exists('url_fragment')) {
-    function url_fragment($url = null, $set = false) : string
+    function url_fragment($url = null, ? string $set = null) : string
     {
         return URL::fragment($url, $set);
     }
@@ -2067,11 +2067,11 @@ if (!function_exists('url_fragment_set')) {
  * Get or $set the host of a $url
  *
  * @param null|string|array $url
- * @param boolean $set
+ * @param null|string $set
  * @return string
  */
 if (!function_exists('url_host')) {
-    function url_host($url = null, $set = false) : string
+    function url_host($url = null, ? string $set = null) : string
     {
         return URL::host($url, $set);
     }
@@ -2135,11 +2135,11 @@ if (!function_exists('url_pass')) {
  * Get or $set the path of a $url
  *
  * @param null|string|array $url
- * @param boolean $set
+ * @param null|string $set
  * @return string
  */
 if (!function_exists('url_path')) {
-    function url_path($url = null, $set = false) : string
+    function url_path($url = null, ? string $set = null) : string
     {
         return URL::path($url, $set);
     }
@@ -2177,11 +2177,11 @@ if (!function_exists('url_path_set')) {
  * Get or $set the port of a $url
  *
  * @param null|string|array $url
- * @param boolean $set
+ * @param null|string $set
  * @return string
  */
 if (!function_exists('url_port')) {
-    function url_port($url = null, $set = false) : string
+    function url_port($url = null, ? string $set = null) : string
     {
         return URL::port($url, $set);
     }
@@ -2205,11 +2205,11 @@ if (!function_exists('url_port_set')) {
  * Get or $set the query of a $url
  *
  * @param null|string|array $url
- * @param boolean $set
+ * @param null|string $set
  * @return string
  */
 if (!function_exists('url_query')) {
-    function url_query($url = null, $set = false) : string
+    function url_query($url = null, ? string $set = null) : string
     {
         return URL::query($url, $set);
     }
@@ -2290,11 +2290,11 @@ if (!function_exists('url_query_set')) {
  * Get or $set the scheme of a $url
  *
  * @param null|string|array $url
- * @param boolean $set
+ * @param null|string $set
  * @return string
  */
 if (!function_exists('url_scheme')) {
-    function url_scheme($url = null, $set = false) : string
+    function url_scheme($url = null, ? string $set = null) : string
     {
         return URL::scheme($url, $set);
     }
@@ -2322,7 +2322,7 @@ if (!function_exists('url_scheme_set')) {
  * @return string
  */
 if (!function_exists('url_user')) {
-    function url_user($url = null, $set = false) : string
+    function url_user($url = null, ? string $set = null) : string
     {
         return URL::user($url, $set);
     }
