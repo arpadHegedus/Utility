@@ -3,11 +3,12 @@
     "description": "Utility classes for everyday php development",
     "type": "library",
     "license": "MIT",
-    "version": "1.1.2",
+    "version": "1.0.0",
     "authors": [
         {
             "name": "Arpad.Hegedus",
-            "email": "arpad@kdweb.co.uk"
+            "email": "hegedus.arpad@gmail.com",
+            "homepage": "https://arpadhegedus.com"
         }
     ],
     "autoload": {

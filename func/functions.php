@@ -686,6 +686,73 @@ function func_throttle(callable $function, int $miliseconds = 300)
 }
 
 /**
+ * Get lat lng data from an address
+ *
+ * @param string $address
+ * @param array $apiParameters
+ * @return null|string
+ */
+function geo_address(string $address, array $apiParameters = []) : ? string
+{
+    return Geo::address($address, $apiParameters);
+}
+
+/**
+ * Get geo data from an address
+ *
+ * @param string $address
+ * @param array $apiParameters
+ * @return null|array
+ */
+function geo_address_data(string $address, array $apiParameters = []) : ? array
+{
+    return Geo::getAddress($address, $apiParameters);
+}
+
+/**
+ * Get lat lng data from an address
+ *
+ * @param string $address1
+ * @param string $address2
+ * @param array $apiParameters
+ * @param string $unit
+ * @return null|string
+ */
+function geo_address_distance(string $address1, string $address2, array $apiParameters = [], string $unit = 'M')
+{
+    return Geo::addressDistance($address1, $address2, $apiParameters, $unit);
+}
+
+/**
+ * Get the distance between 2 pairs of lat and lng values in various units
+ *
+ * @param float $lat1
+ * @param float $lng1
+ * @param float $lat2
+ * @param float $lng2
+ * @param string $unit
+ * @return null|string
+ */
+function geo_distance(float $lat1, float $lng1, float $lat2, float $lng2, string $unit = 'M') : ? string
+{
+    return Geo::distance($lat1, $lng1, $lat2, $lng2, $unit);
+}
+
+/**
+ * Get the distance between 2 pairs of lat and lng values in various units
+ *
+ * @param float $lat1
+ * @param float $lng1
+ * @param float $lat2
+ * @param float $lng2
+ * @return array
+ */
+function geo_distance_data(float $lat1, float $lng1, float $lat2, float $lng2) : array
+{
+    return Geo::getDistance($lat1, $lng1, $lat2, $lng2);
+}
+
+/**
  * Get a simplified type of a variable.
  * Return values: string|array|object|number|boolean|unknown
  *
@@ -1815,6 +1882,29 @@ function url_query($url = null, $set = false) : string
 function url_query_add(string $key, $value, $url = null) : string
 {
     return URL::queryAdd($url, $key, $value);
+}
+
+/**
+ * Get the array of query args from a $url
+ *
+ * @param null|string|array $url
+ * @return array
+ */
+function url_query_array($url = null) : array
+{
+    return URL::queryArray($url);
+}
+
+/**
+ * Get a query parameter from a URL
+ *
+ * @param string $parameter
+ * @param null|string|array $url
+ * @return mixed
+ */
+function url_query_get($parameter, $url = null)
+{
+    return URL::queryGet($url, $parameter);
 }
 
 /**

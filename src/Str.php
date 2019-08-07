@@ -1000,6 +1000,8 @@ class Str extends Misc
     public static function normalize(string $string) : string
     {
         return preg_replace([
+            '\r\n',
+            '\r',
             '/\x{2026}/u',
             '/[\x{201C}\x{201D}\x{201E}\x{201F}\x{2033}\x{2034}\x{2036}\x{2037}\x{2057}]/u',
             '/[\x{201A}\x{201B}\x{2018}\x{2019}\x{2032}\x{2035}]/u',
@@ -1011,6 +1013,8 @@ class Str extends Misc
             '/[\x{2049}]/u',
             '/[\x{204F}]/u'
         ], [
+            '\n',
+            '\n',
             '...',
             '"',
             "'",
