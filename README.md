@@ -11,6 +11,13 @@
     * [sort](#sort)
     * [sortKeys](#sortkeys)
     * [values](#values)
+    * [abides](#abides)
+    * [abidesAny](#abidesany)
+    * [add](#add)
+    * [dd](#dd)
+    * [dump](#dump)
+    * [merge](#merge)
+    * [getShallowType](#getshallowtype)
     * [append](#append)
     * [average](#average)
     * [blueprint](#blueprint)
@@ -61,7 +68,20 @@
     * [undot](#undot)
     * [unique](#unique)
     * [without](#without)
+* [Chain](#chain)
+    * [__construct](#__construct)
+    * [break](#break)
+    * [swap](#swap)
+    * [__call](#__call)
+    * [start](#start)
 * [Collection](#collection)
+    * [abides](#abides-1)
+    * [abidesAny](#abidesany-1)
+    * [add](#add-1)
+    * [dd](#dd-1)
+    * [dump](#dump-1)
+    * [merge](#merge-1)
+    * [getShallowType](#getshallowtype-1)
     * [get](#get-1)
     * [group](#group-1)
     * [keys](#keys-1)
@@ -70,7 +90,34 @@
     * [sort](#sort-1)
     * [sortKeys](#sortkeys-1)
     * [values](#values-1)
+* [Func](#func)
+    * [cache](#cache)
+    * [call](#call)
+    * [once](#once)
+    * [only](#only)
+    * [throttle](#throttle)
+* [Geo](#geo)
+    * [address](#address)
+    * [addressDistance](#addressdistance)
+    * [distance](#distance)
+    * [getAddress](#getaddress)
+    * [getDistance](#getdistance)
+* [Misc](#misc)
+    * [abides](#abides-2)
+    * [abidesAny](#abidesany-2)
+    * [add](#add-2)
+    * [dd](#dd-2)
+    * [dump](#dump-2)
+    * [merge](#merge-2)
+    * [getShallowType](#getshallowtype-2)
 * [Num](#num)
+    * [abides](#abides-3)
+    * [abidesAny](#abidesany-3)
+    * [add](#add-3)
+    * [dd](#dd-3)
+    * [dump](#dump-3)
+    * [merge](#merge-3)
+    * [getShallowType](#getshallowtype-3)
     * [accord](#accord)
     * [fileSize](#filesize)
     * [format](#format)
@@ -95,11 +142,25 @@
     * [sort](#sort-2)
     * [sortKeys](#sortkeys-2)
     * [values](#values-2)
+    * [abides](#abides-4)
+    * [abidesAny](#abidesany-4)
+    * [add](#add-4)
+    * [dd](#dd-4)
+    * [dump](#dump-4)
+    * [merge](#merge-4)
+    * [getShallowType](#getshallowtype-4)
     * [has](#has-1)
     * [properties](#properties)
     * [methods](#methods)
     * [unpack](#unpack)
 * [Str](#str)
+    * [abides](#abides-5)
+    * [abidesAny](#abidesany-5)
+    * [add](#add-5)
+    * [dd](#dd-5)
+    * [dump](#dump-5)
+    * [merge](#merge-5)
+    * [getShallowType](#getshallowtype-5)
     * [accord](#accord-1)
     * [alpha](#alpha)
     * [alphaNumeric](#alphanumeric)
@@ -215,6 +276,7 @@
     * [query](#query)
     * [queryAdd](#queryadd)
     * [queryArray](#queryarray)
+    * [queryGet](#queryget)
     * [queryRemove](#queryremove)
     * [querySet](#queryset)
     * [scheme](#scheme)
@@ -413,6 +475,162 @@ Arr::values( array|object $collection ): array
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `$collection` | **array&#124;object** |  |
+
+
+
+
+---
+
+### abides
+
+Check if $data abides an array of $rules
+
+```php
+Arr::abides( mixed $data, array|callable $rules = array() ): boolean
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+| `$rules` | **array&#124;callable** |  |
+
+
+
+
+---
+
+### abidesAny
+
+Check if $data abides any of an array of $rules
+
+```php
+Arr::abidesAny( mixed $data, string|array|callable $rules = array() ): boolean
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+| `$rules` | **string&#124;array&#124;callable** |  |
+
+
+
+
+---
+
+### add
+
+Add mixed $data to other mixed data cleverly
+
+```php
+Arr::add( mixed $data ): mixed
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+
+
+
+
+---
+
+### dd
+
+Dump $data and die
+
+```php
+Arr::dd( mixed $data ): void
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+
+
+
+
+---
+
+### dump
+
+Dry dump $data for debug
+
+```php
+Arr::dump( mixed $data ): void
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+
+
+
+
+---
+
+### merge
+
+Merge mixed $data to other mixed data cleverly
+
+```php
+Arr::merge( mixed $data ): mixed
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+
+
+
+
+---
+
+### getShallowType
+
+Get a simplified type of a variable.
+
+```php
+Arr::getShallowType( mixed $data ): string
+```
+
+Return values: string|array|object|number|boolean|unknown
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
 
 
 
@@ -1574,6 +1792,122 @@ Arr::without( array $array, mixed $values ): array
 
 ---
 
+## Chain
+
+
+
+
+
+* Full name: \Utility\Chain
+
+
+### __construct
+
+Start a new chain
+
+```php
+Chain::__construct( mixed $subject, string|object $class )
+```
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$subject` | **mixed** |  |
+| `$class` | **string&#124;object** |  |
+
+
+
+
+---
+
+### break
+
+Break the chain and return subject
+
+```php
+Chain::break(  ): mixed
+```
+
+
+
+
+
+
+
+---
+
+### swap
+
+Swap Utility class along the chain
+
+```php
+Chain::swap( string|object $class ): void
+```
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$class` | **string&#124;object** |  |
+
+
+
+
+---
+
+### __call
+
+Dispatch method calls to Utility class and pass in subject as the first argument
+
+```php
+Chain::__call( string $method, array $arguments ): void
+```
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$method` | **string** |  |
+| `$arguments` | **array** |  |
+
+
+
+
+---
+
+### start
+
+Start a new chain
+
+```php
+Chain::start( mixed $subject, string|object $class ): void
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$subject` | **mixed** |  |
+| `$class` | **string&#124;object** |  |
+
+
+
+
+---
+
 ## Collection
 
 
@@ -1581,8 +1915,164 @@ Arr::without( array $array, mixed $values ): array
 
 
 * Full name: \Utility\Collection
-* Parent class: 
+* Parent class: \Utility\Misc
 
+
+### abides
+
+Check if $data abides an array of $rules
+
+```php
+Collection::abides( mixed $data, array|callable $rules = array() ): boolean
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+| `$rules` | **array&#124;callable** |  |
+
+
+
+
+---
+
+### abidesAny
+
+Check if $data abides any of an array of $rules
+
+```php
+Collection::abidesAny( mixed $data, string|array|callable $rules = array() ): boolean
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+| `$rules` | **string&#124;array&#124;callable** |  |
+
+
+
+
+---
+
+### add
+
+Add mixed $data to other mixed data cleverly
+
+```php
+Collection::add( mixed $data ): mixed
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+
+
+
+
+---
+
+### dd
+
+Dump $data and die
+
+```php
+Collection::dd( mixed $data ): void
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+
+
+
+
+---
+
+### dump
+
+Dry dump $data for debug
+
+```php
+Collection::dump( mixed $data ): void
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+
+
+
+
+---
+
+### merge
+
+Merge mixed $data to other mixed data cleverly
+
+```php
+Collection::merge( mixed $data ): mixed
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+
+
+
+
+---
+
+### getShallowType
+
+Get a simplified type of a variable.
+
+```php
+Collection::getShallowType( mixed $data ): string
+```
+
+Return values: string|array|object|number|boolean|unknown
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+
+
+
+
+---
 
 ### get
 
@@ -1772,6 +2262,426 @@ Collection::values( array|object $collection ): array
 
 ---
 
+## Func
+
+
+
+
+
+* Full name: \Utility\Func
+
+
+### cache
+
+Cache the return of a $function and return the value from cache in subsequent calls
+
+```php
+Func::cache( callable $function ): void
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$function` | **callable** |  |
+
+
+
+
+---
+
+### call
+
+Call a $function with $arguments whether it is a reference array string or an anonymus function
+
+```php
+Func::call( null|callable $function, array $arguments = array() ): mixed
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$function` | **null&#124;callable** |  |
+| `$arguments` | **array** |  |
+
+
+
+
+---
+
+### once
+
+Limit a $function to be only called once
+
+```php
+Func::once( callable $function, boolean $unique = false ): void
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$function` | **callable** |  |
+| `$unique` | **boolean** |  |
+
+
+
+
+---
+
+### only
+
+Limit a $function to be only called a certain number of $times
+
+```php
+Func::only( callable $function, integer $times = 1, boolean $unique = false ): void
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$function` | **callable** |  |
+| `$times` | **integer** |  |
+| `$unique` | **boolean** |  |
+
+
+
+
+---
+
+### throttle
+
+Throttle a $function so that it can only be called once in every $miliseconds
+
+```php
+Func::throttle( callable $function, integer $miliseconds = 300 ): void
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$function` | **callable** |  |
+| `$miliseconds` | **integer** |  |
+
+
+
+
+---
+
+## Geo
+
+
+
+
+
+* Full name: \Utility\Geo
+
+
+### address
+
+Get lat lng data from an address
+
+```php
+Geo::address( string $address, array $apiParameters = array() ): null|string
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$address` | **string** |  |
+| `$apiParameters` | **array** |  |
+
+
+
+
+---
+
+### addressDistance
+
+Calculate the distance between 2 pairs of lat and lng values
+
+```php
+Geo::addressDistance( string $address1, string $address2, array $apiParameters = array(), string $unit = 'M' ): float
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$address1` | **string** |  |
+| `$address2` | **string** |  |
+| `$apiParameters` | **array** |  |
+| `$unit` | **string** |  |
+
+
+
+
+---
+
+### distance
+
+Get the distance between 2 pairs of lat and lng values in various units
+
+```php
+Geo::distance( float $lat1, float $lng1, float $lat2, float $lng2, string $unit = 'M' ): null|string
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$lat1` | **float** |  |
+| `$lng1` | **float** |  |
+| `$lat2` | **float** |  |
+| `$lng2` | **float** |  |
+| `$unit` | **string** |  |
+
+
+
+
+---
+
+### getAddress
+
+Get geo data from an address
+
+```php
+Geo::getAddress( string $address, array $apiParameters = array() )
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$address` | **string** |  |
+| `$apiParameters` | **array** |  |
+
+
+
+
+---
+
+### getDistance
+
+Calculate the distance between 2 pairs of lat and lng values
+
+```php
+Geo::getDistance( float $lat1, float $lng1, float $lat2, float $lng2 ): void
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$lat1` | **float** |  |
+| `$lng1` | **float** |  |
+| `$lat2` | **float** |  |
+| `$lng2` | **float** |  |
+
+
+
+
+---
+
+## Misc
+
+
+
+
+
+* Full name: \Utility\Misc
+
+
+### abides
+
+Check if $data abides an array of $rules
+
+```php
+Misc::abides( mixed $data, array|callable $rules = array() ): boolean
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+| `$rules` | **array&#124;callable** |  |
+
+
+
+
+---
+
+### abidesAny
+
+Check if $data abides any of an array of $rules
+
+```php
+Misc::abidesAny( mixed $data, string|array|callable $rules = array() ): boolean
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+| `$rules` | **string&#124;array&#124;callable** |  |
+
+
+
+
+---
+
+### add
+
+Add mixed $data to other mixed data cleverly
+
+```php
+Misc::add( mixed $data ): mixed
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+
+
+
+
+---
+
+### dd
+
+Dump $data and die
+
+```php
+Misc::dd( mixed $data ): void
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+
+
+
+
+---
+
+### dump
+
+Dry dump $data for debug
+
+```php
+Misc::dump( mixed $data ): void
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+
+
+
+
+---
+
+### merge
+
+Merge mixed $data to other mixed data cleverly
+
+```php
+Misc::merge( mixed $data ): mixed
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+
+
+
+
+---
+
+### getShallowType
+
+Get a simplified type of a variable.
+
+```php
+Misc::getShallowType( mixed $data ): string
+```
+
+Return values: string|array|object|number|boolean|unknown
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+
+
+
+
+---
+
 ## Num
 
 
@@ -1779,8 +2689,164 @@ Collection::values( array|object $collection ): array
 
 
 * Full name: \Utility\Num
-* Parent class: 
+* Parent class: \Utility\Misc
 
+
+### abides
+
+Check if $data abides an array of $rules
+
+```php
+Num::abides( mixed $data, array|callable $rules = array() ): boolean
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+| `$rules` | **array&#124;callable** |  |
+
+
+
+
+---
+
+### abidesAny
+
+Check if $data abides any of an array of $rules
+
+```php
+Num::abidesAny( mixed $data, string|array|callable $rules = array() ): boolean
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+| `$rules` | **string&#124;array&#124;callable** |  |
+
+
+
+
+---
+
+### add
+
+Add mixed $data to other mixed data cleverly
+
+```php
+Num::add( mixed $data ): mixed
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+
+
+
+
+---
+
+### dd
+
+Dump $data and die
+
+```php
+Num::dd( mixed $data ): void
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+
+
+
+
+---
+
+### dump
+
+Dry dump $data for debug
+
+```php
+Num::dump( mixed $data ): void
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+
+
+
+
+---
+
+### merge
+
+Merge mixed $data to other mixed data cleverly
+
+```php
+Num::merge( mixed $data ): mixed
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+
+
+
+
+---
+
+### getShallowType
+
+Get a simplified type of a variable.
+
+```php
+Num::getShallowType( mixed $data ): string
+```
+
+Return values: string|array|object|number|boolean|unknown
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+
+
+
+
+---
 
 ### accord
 
@@ -2331,6 +3397,162 @@ Obj::values( array|object $collection ): array
 
 ---
 
+### abides
+
+Check if $data abides an array of $rules
+
+```php
+Obj::abides( mixed $data, array|callable $rules = array() ): boolean
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+| `$rules` | **array&#124;callable** |  |
+
+
+
+
+---
+
+### abidesAny
+
+Check if $data abides any of an array of $rules
+
+```php
+Obj::abidesAny( mixed $data, string|array|callable $rules = array() ): boolean
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+| `$rules` | **string&#124;array&#124;callable** |  |
+
+
+
+
+---
+
+### add
+
+Add mixed $data to other mixed data cleverly
+
+```php
+Obj::add( mixed $data ): mixed
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+
+
+
+
+---
+
+### dd
+
+Dump $data and die
+
+```php
+Obj::dd( mixed $data ): void
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+
+
+
+
+---
+
+### dump
+
+Dry dump $data for debug
+
+```php
+Obj::dump( mixed $data ): void
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+
+
+
+
+---
+
+### merge
+
+Merge mixed $data to other mixed data cleverly
+
+```php
+Obj::merge( mixed $data ): mixed
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+
+
+
+
+---
+
+### getShallowType
+
+Get a simplified type of a variable.
+
+```php
+Obj::getShallowType( mixed $data ): string
+```
+
+Return values: string|array|object|number|boolean|unknown
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+
+
+
+
+---
+
 ### has
 
 Check if an $object has a $key (property or method)
@@ -2428,8 +3650,164 @@ Obj::unpack( object $data, null|string $attribute = null ): object
 
 
 * Full name: \Utility\Str
-* Parent class: 
+* Parent class: \Utility\Misc
 
+
+### abides
+
+Check if $data abides an array of $rules
+
+```php
+Str::abides( mixed $data, array|callable $rules = array() ): boolean
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+| `$rules` | **array&#124;callable** |  |
+
+
+
+
+---
+
+### abidesAny
+
+Check if $data abides any of an array of $rules
+
+```php
+Str::abidesAny( mixed $data, string|array|callable $rules = array() ): boolean
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+| `$rules` | **string&#124;array&#124;callable** |  |
+
+
+
+
+---
+
+### add
+
+Add mixed $data to other mixed data cleverly
+
+```php
+Str::add( mixed $data ): mixed
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+
+
+
+
+---
+
+### dd
+
+Dump $data and die
+
+```php
+Str::dd( mixed $data ): void
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+
+
+
+
+---
+
+### dump
+
+Dry dump $data for debug
+
+```php
+Str::dump( mixed $data ): void
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+
+
+
+
+---
+
+### merge
+
+Merge mixed $data to other mixed data cleverly
+
+```php
+Str::merge( mixed $data ): mixed
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+
+
+
+
+---
+
+### getShallowType
+
+Get a simplified type of a variable.
+
+```php
+Str::getShallowType( mixed $data ): string
+```
+
+Return values: string|array|object|number|boolean|unknown
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** |  |
+
+
+
+
+---
 
 ### accord
 
@@ -4763,7 +6141,7 @@ URL::current( array $parts = array() ): string
 Get or $set the fragment of a $url
 
 ```php
-URL::fragment( null|string|array $url, boolean $set = false ): string
+URL::fragment( null|string|array $url, null|string $set = null ): string
 ```
 
 
@@ -4774,7 +6152,7 @@ URL::fragment( null|string|array $url, boolean $set = false ): string
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `$url` | **null&#124;string&#124;array** |  |
-| `$set` | **boolean** |  |
+| `$set` | **null&#124;string** |  |
 
 
 
@@ -4809,7 +6187,7 @@ URL::fragmentSet( null|string|array $url, string $fragment ): string
 Get or $set the host of a $url
 
 ```php
-URL::host( null|string|array $url, boolean $set = false ): string
+URL::host( null|string|array $url, null|string $set = null ): string
 ```
 
 
@@ -4820,7 +6198,7 @@ URL::host( null|string|array $url, boolean $set = false ): string
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `$url` | **null&#124;string&#124;array** |  |
-| `$set` | **boolean** |  |
+| `$set` | **null&#124;string** |  |
 
 
 
@@ -4922,7 +6300,7 @@ URL::pass( null|string|array $url ): string
 Get or $set the path of a $url
 
 ```php
-URL::path( null|string|array $url, boolean $set = false ): string
+URL::path( null|string|array $url, null|string $set = null ): string
 ```
 
 
@@ -4933,7 +6311,7 @@ URL::path( null|string|array $url, boolean $set = false ): string
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `$url` | **null&#124;string&#124;array** |  |
-| `$set` | **boolean** |  |
+| `$set` | **null&#124;string** |  |
 
 
 
@@ -4968,7 +6346,7 @@ URL::pathRemove( null|string|array $url, \Utility\string $search ): string
 Set $path part of a $url
 
 ```php
-URL::pathSet( null|string|array $url, string $path ): string
+URL::pathSet( null|string|array $url, null|string $path ): string
 ```
 
 
@@ -4979,7 +6357,7 @@ URL::pathSet( null|string|array $url, string $path ): string
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `$url` | **null&#124;string&#124;array** |  |
-| `$path` | **string** |  |
+| `$path` | **null&#124;string** |  |
 
 
 
@@ -5079,13 +6457,12 @@ URL::queryAdd( null|string|array $url, string $key, mixed $value ): string
 
 ---
 
-<<<<<<< HEAD
 ### queryArray
 
 Get the array of query args from a $url
 
 ```php
-URL::queryArray( null|string|array $url): array
+URL::queryArray( null|string|array $url ): array
 ```
 
 
@@ -5099,10 +6476,32 @@ URL::queryArray( null|string|array $url): array
 
 
 
+
 ---
 
-=======
->>>>>>> dcd4d3f67ff1f4542873ab52ed2ad84ddf8c8799
+### queryGet
+
+Get a query parameter from a URL
+
+```php
+URL::queryGet( null|string|array $url, string $parameter ): string|null
+```
+
+
+
+* This method is **static**.
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$url` | **null&#124;string&#124;array** |  |
+| `$parameter` | **string** |  |
+
+
+
+
+---
+
 ### queryRemove
 
 Remove a parameter by $key from the query of the $url
@@ -5154,7 +6553,7 @@ URL::querySet( null|string|array $url, string|array $data ): string
 Get or $set the scheme of a $url
 
 ```php
-URL::scheme( null|string|array $url, boolean $set = false ): string
+URL::scheme( null|string|array $url, null|string $set = null ): string
 ```
 
 
@@ -5165,7 +6564,7 @@ URL::scheme( null|string|array $url, boolean $set = false ): string
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `$url` | **null&#124;string&#124;array** |  |
-| `$set` | **boolean** |  |
+| `$set` | **null&#124;string** |  |
 
 
 
@@ -5177,7 +6576,7 @@ URL::scheme( null|string|array $url, boolean $set = false ): string
 Set $scheme part of a $url
 
 ```php
-URL::schemeSet( null|string|array $url, string $scheme ): string
+URL::schemeSet( null|string|array $url, null|string $scheme ): string
 ```
 
 
@@ -5188,7 +6587,7 @@ URL::schemeSet( null|string|array $url, string $scheme ): string
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `$url` | **null&#124;string&#124;array** |  |
-| `$scheme` | **string** |  |
+| `$scheme` | **null&#124;string** |  |
 
 
 
@@ -5200,7 +6599,7 @@ URL::schemeSet( null|string|array $url, string $scheme ): string
 Get the user part of a $url
 
 ```php
-URL::user( null|string|array $url, false|string $set = false ): string
+URL::user( null|string|array $url, null|string $set = null ): string
 ```
 
 
@@ -5211,7 +6610,7 @@ URL::user( null|string|array $url, false|string $set = false ): string
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `$url` | **null&#124;string&#124;array** |  |
-| `$set` | **false&#124;string** |  |
+| `$set` | **null&#124;string** |  |
 
 
 
@@ -5221,4 +6620,4 @@ URL::user( null|string|array $url, false|string $set = false ): string
 
 
 --------
-> This document was automatically generated from source code comments on 2018-11-01 using [phpDocumentor](http://www.phpdoc.org/) and [cvuorinen/phpdoc-markdown-public](https://github.com/cvuorinen/phpdoc-markdown-public)
+> This document was automatically generated from source code comments on 2019-08-07 using [phpDocumentor](http://www.phpdoc.org/) and [cvuorinen/phpdoc-markdown-public](https://github.com/cvuorinen/phpdoc-markdown-public)
