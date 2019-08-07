@@ -1,9 +1,9 @@
 {
-    "name": "thmr/utility",
+    "name": "arpadhegedus/utility",
     "description": "Utility classes for everyday php development",
     "type": "library",
     "license": "MIT",
-    "version": "1.0.0",
+    "version": "0.0.9",
     "authors": [
         {
             "name": "Arpad.Hegedus",
