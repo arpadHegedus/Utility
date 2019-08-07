@@ -2497,7 +2497,7 @@ Geo::getAddress( string $address, array $apiParameters = array() )
 Calculate the distance between 2 pairs of lat and lng values
 
 ```php
-Geo::getDistance( float $lat1, float $lng1, float $lat2, float $lng2 ): void
+Geo::getDistance( float $lat1, float $lng1, float $lat2, float $lng2 ): array
 ```
 
 

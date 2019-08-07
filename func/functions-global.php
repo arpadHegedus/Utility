@@ -102,6 +102,20 @@ if (!function_exists('array_any_key_exists')) {
 }
 
 /**
+ * Append a $value to an $array
+ *
+ * @param array $array
+ * @param mixed $value
+ * @return array
+ */
+if (!function_exists('array_append')) {
+    function array_append(array $array, $value) : array
+    {
+        return Arr::append($array, $value);
+    }
+}
+
+/**
  * Get average value of an $array
  *
  * @param array $array
@@ -439,6 +453,20 @@ if (!function_exists('array_pluck')) {
     function array_pluck(array $array, $key, $preserve_keys = true, bool $keep_empty = false) : array
     {
         return Arr::pluck($array, $key, $preserve_keys, $keep_empty);
+    }
+}
+
+/**
+ * Prepend an $array with a $value
+ *
+ * @param array $array
+ * @param mixed $value
+ * @return array
+ */
+if (!function_exists('array_prepend')) {
+    function array_prepend(array $array, $value) : array
+    {
+        return Arr::prepend($array, $value);
     }
 }
 

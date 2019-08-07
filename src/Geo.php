@@ -102,17 +102,16 @@ class Geo
      * @param float $lng1
      * @param float $lat2
      * @param float $lng2
-     * @return void
+     * @return array
      */
-    public static function getDistance(float $lat1, float $lng1, float $lat2, float $lng2) {
+    public static function getDistance(float $lat1, float $lng1, float $lat2, float $lng2) : array {
         $theta = $lng1 - $lng2;
         $dist = rad2deg(acos(sin(deg2rad($lat1)) * sin(deg2rad($lat2)) + cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta))));
         $miles = $dist * 60 * 1.1515;
-        $distance = [
+        return [
             'K' => $miles * 1.609344,
             'M' => $miles,
             'N' => $miles * 0.8684,
         ];
-        return $distance;
     }
 }

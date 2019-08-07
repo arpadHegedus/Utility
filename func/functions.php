@@ -81,6 +81,18 @@ function array_any_key_exists(array $keys, array $array) : bool
 }
 
 /**
+ * Append a $value to an $array
+ *
+ * @param array $array
+ * @param mixed $value
+ * @return array
+ */
+function array_append(array $array, $value) : array
+{
+    return Arr::append($array, $value);
+}
+
+/**
  * Get average value of an $array
  *
  * @param array $array
@@ -371,6 +383,18 @@ function array_normalize(array $array) : array
 function array_pluck(array $array, $key, $preserve_keys = true, bool $keep_empty = false) : array
 {
     return Arr::pluck($array, $key, $preserve_keys, $keep_empty);
+}
+
+/**
+ * Prepend an $array with a $value
+ *
+ * @param array $array
+ * @param mixed $value
+ * @return array
+ */
+function array_prepend(array $array, $value) : array
+{
+    return Arr::prepend($array, $value);
 }
 
 /**
@@ -1582,7 +1606,7 @@ function str_template(string $string, array $data = [], string $var_symbol = '%'
  */
 function str_title(string $string, $encoding = null) : string
 {
-    return Str::title($strin, $encoding);
+    return Str::title($string, $encoding);
 }
 
 /**
@@ -1721,10 +1745,10 @@ function url_build(array $url) : string
  * Get or $set the fragment of a $url
  *
  * @param null|string|array $url
- * @param boolean $set
+ * @param null|string $set
  * @return string
  */
-function url_fragment($url = null, $set = false) : string
+function url_fragment($url = null, ? string $set = null) : string
 {
     return URL::fragment($url, $set);
 }
@@ -1745,10 +1769,10 @@ function url_fragment_set(string $fragment, $url = null) : string
  * Get or $set the host of a $url
  *
  * @param null|string|array $url
- * @param boolean $set
+ * @param null|string $set
  * @return string
  */
-function url_host($url = null, $set = false) : string
+function url_host($url = null, ? string $set = null) : string
 {
     return URL::host($url, $set);
 }
@@ -1803,10 +1827,10 @@ function url_pass($url = null) : string
  * Get or $set the path of a $url
  *
  * @param null|string|array $url
- * @param boolean $set
+ * @param null|string $set
  * @return string
  */
-function url_path($url = null, $set = false) : string
+function url_path($url = null, ? string $set = null) : string
 {
     return URL::path($url, $set);
 }
@@ -1839,10 +1863,10 @@ function url_path_set(string $path, $url = null) : string
  * Get or $set the port of a $url
  *
  * @param null|string|array $url
- * @param boolean $set
+ * @param null|string $set
  * @return string
  */
-function url_port($url = null, $set = false) : string
+function url_port($url = null, ? string $set = null) : string
 {
     return URL::port($url, $set);
 }
@@ -1863,10 +1887,10 @@ function url_port_set($port, $url = null) : string
  * Get or $set the query of a $url
  *
  * @param null|string|array $url
- * @param boolean $set
+ * @param null|string $set
  * @return string
  */
-function url_query($url = null, $set = false) : string
+function url_query($url = null, ? string $set = null) : string
 {
     return URL::query($url, $set);
 }
@@ -1935,10 +1959,10 @@ function url_query_set($data, $url = null) : string
  * Get or $set the scheme of a $url
  *
  * @param null|string|array $url
- * @param boolean $set
+ * @param null|string $set
  * @return string
  */
-function url_scheme($url = null, $set = false) : string
+function url_scheme($url = null, ? string $set = null) : string
 {
     return URL::scheme($url, $set);
 }
@@ -1959,10 +1983,10 @@ function url_scheme_set(string $scheme, $url = null) : string
  * Get the user part of a $url
  *
  * @param null|string|array $url
- * @param false|string $set
+ * @param null|string $set
  * @return string
  */
-function url_user($url = null, $set = false) : string
+function url_user($url = null, ? string $set = null) : string
 {
     return URL::user($url, $set);
 }
